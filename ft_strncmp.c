@@ -6,13 +6,14 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 00:48:59 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/20 00:55:24 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/20 01:03:26 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
+//MIRAR MEJOR
 //lo que hace es comparar dos cadenas de caracteres y devuelve un entero menor, igual o mayor que cero si s1 es menor, igual o mayor que s2
 int ft_strncmp(char *s1, char *s2, size_t n) //se pide size_t n porque es el tamaño de la memoria a comparar
 {
