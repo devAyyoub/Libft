@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 14:07:51 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/19 23:54:08 by Aamjahed         ###   ########.fr       */
+/*   Created: 2023/09/20 00:38:38 by Aamjahed          #+#    #+#             */
+/*   Updated: 2023/09/20 00:38:57 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
 
-int ft_isalnum(int c)
+void ft_tolower(char *str)
 {
-    return (c >= 'a' && c <='z') || (c >= '0' && c <='9');
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] += 32;
+        i++;
+    }
 }

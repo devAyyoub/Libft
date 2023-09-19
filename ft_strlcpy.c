@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 14:07:51 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/19 23:54:08 by Aamjahed         ###   ########.fr       */
+/*   Created: 2023/09/20 00:23:21 by Aamjahed          #+#    #+#             */
+/*   Updated: 2023/09/20 00:26:04 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 
-int ft_isalnum(int c)
+void ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
-    return (c >= 'a' && c <='z') || (c >= '0' && c <='9');
+    size_t i;
+
+    i = 0;
+    while (src[i] && i < dstsize - 1)
+    {
+        dst[i] = src[i];
+        i++;
+    }
+    dst[i] = '\0';
 }
