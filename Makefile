@@ -1,65 +1,56 @@
-Library		= libft
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aflorido <aflorido@student.42malaga.com>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/09/11 14:26:05 by aflorido          #+#    #+#              #
+#    Updated: 2023/09/11 21:25:57 by aflorido         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-files 	   = ft_strlen \
-			 ft_memmove \
-			 ft_memcpy \
-			 ft_strlcpy \
-			 ft_strlcat \
-			 ft_isalpha \
-			 ft_isdigit \
-			 ft_isalnum \
-			 ft_isascii \
-			 ft_isprint \
-			 ft_memset \
-			 ft_bzero \
-			 ft_toupper \
-			 ft_tolower \
-			 ft_strchr \
-			 ft_strrchr \
-			 ft_strncmp \
-			 ft_memchr \
-			 ft_memcmp \
-			 ft_strnstr \
-			 ft_atoi \
-			 ft_calloc \
-			 ft_strdup \
-			 ft_substr \
-			 ft_strjoin \
-			 ft_strtrim \
-			 ft_split \
-			 ft_itoa \
-			 ft_strmapi \
-			 ft_striteri \
-			 ft_putchar_fd \
-			 ft_putstr_fd \
-			 ft_putendl_fd \
-			 ft_putnbr_fd \
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
+LIBC		= ar -rcs
+NAME		= libft.a
+RM			= rm -rf
+SRC			= ft_isalpha.c ft_isdigit.c ft_isalnum.c \
+	ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c \
+	ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
+	ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
+	ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c \
+	ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
+	ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
+	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
+	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+BONUS_SRC	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+EXTEN_SRC	= ft_isspace.c ft_isxdigit.c ft_abs.c ft_putchar.c ft_putstr.c \
+	ft_strcpy.c
+SRC_OBJ		= $(SRC:.c=.o)
+BONUS_OBJ	= $(BONUS_SRC:.c=.o)
+EXTEN_OBJ	= $(EXTEN_SRC:.c=.o)
 
-Compiler	= gcc
-
-CmpFlags	= -Wall -Wextra -Werror
-
-OUTN	= $(Library).a
-
-CFILES	= $(files:%=%.c)
-
-OFILES	= $(files:%=%.o)
-
-NAME	= $(OUTN)
-
-$(NAME):
-	$(Compiler) $(CmpFlags) -c $(CFILES) -I./
-	ar -rc $(OUTN) $(OFILES)
+# --- Targets ---
+%.o: %.c
+	$(CC) $(CFLAGS) -c $^ -o $@
 
 all: $(NAME)
 
+$(NAME): $(EXTEN_OBJ) $(SRC_OBJ)
+	$(LIBC) $(NAME) $(EXTEN_OBJ) $(SRC_OBJ)
+
+bonus: $(EXTEN_OBJ) $(BONUS_OBJ) $(SRC_OBJ)
+	$(LIBC) $(NAME) $(EXTEN_OBJ) $(BONUS_OBJ) $(SRC_OBJ)
+
 clean:
-	rm -f $(NAME)
-	rm -f $(OFILES)
+	$(RM) *.o
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
-re: fclean all
+re: fclean $(NAME)
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re bonus
