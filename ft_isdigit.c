@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:23:38 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/16 12:34:48 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/22 18:51:25 by aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int d)
+int	ft_isdigit(int d)
 {
-    return (d >='0' && d <= '9');
+	return (d >= '0' && d <= '9');
 }
