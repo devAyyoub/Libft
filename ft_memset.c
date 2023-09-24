@@ -13,26 +13,12 @@
 #include <stdio.h>
 #include <string.h>
 
-//la funcion memset es una funcion que llena un bloque de memoria con un valor especifico
-
-void *memset(void *s, int c, size_t n)
+void	*memset(void *s, int c, size_t n)
 {
-    unsigned char *p;
+	unsigned char	*p;
 
-    p = s;
-    while (n--) //mientras n sea diferente de 0
-        *p++ = (unsigned char)c; //casteo de c a unsigned char
-    return (s);
-}
-
-int main()
-{
-    char str[50] = "GeeksForGeeks is for programming geeks.";
-    printf("\nBefore memset(): %s\n", str);
-
-    // Fill 8 characters starting from str[13] with '.'
-    memset(str + 13, '.', 8 * sizeof(char)); //lo que hace es que empieza a llenar desde la posicion 13 del string con el caracter '.' y lo hace 8 veces
-
-    printf("After memset():  %s", str);
-    return 0;
+	p = s;
+	while (n--)
+		*p++ = (unsigned char);
+	return (s);
 }
