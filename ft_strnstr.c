@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 00:14:41 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/21 00:15:09 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/24 23:08:41 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-//Esta funcion busca la primera aparicion de la cadena needle en la cadena haystack, donde no mas de len caracteres son buscados. Los caracteres que aparecen despues de un caracter '\0' no son buscados.
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    size_t i;
-    size_t j;
+	size_t	i;
+	size_t	little_len;
 
-    i = 0;
-    if (!*needle)
-        return ((char *)haystack);
-    while (haystack[i] && i < len)
-    {
-        j = 0;
-        while (haystack[i + j] == needle[j] && i + j < len)
-        {
-            if (!needle[j + 1])
-                return ((char *)haystack + i);
-            j++;
-        }
-        i++;
-    }
-    return (NULL);
+	little_len = ft_strlen(little);
+	if (little_len == 0)
+		return ((char *)big);
+	i = 0;
+	while (big[i] != '\0' && i + little_len <= len)
+	{
+		if (ft_strncmp(big + i, little, little_len) == 0)
+			return ((char *)(big + i));
+		++i;
+	}
+	return (NULL);
 }

@@ -6,35 +6,23 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 00:48:59 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/22 10:09:16 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/24 23:01:31 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-//MIRAR MEJOR
-//lo que hace es comparar dos cadenas de caracteres y devuelve un entero menor, igual o mayor que cero si s1 es menor, igual o mayor que s2
-int ft_strncmp(char *s1, char *s2, size_t n) //se pide size_t n porque es el tamaño de la memoria a comparar
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (s1[i] && s2[i] && i < n) //mientras s1[i] y s2[i] no sean nulos y i sea menor que n
-    {
-        if (s1[i] != s2[i])
-            return (s1[i] - s2[i]); //devuelve la diferencia entre los dos caracteres
-        i++;
-    }
-    if (i == n)
-        return (0);
-    return (s1[i] - s2[i]);
-}
-
-int main()
-{
-    char s1[] = "hello";
-    char s2[] = "hello";
-    printf("%d\n", ft_strncmp(s1, s2, 2));
-    return (0);
+	i = 0;
+	while (i < n)
+	{
+		if ((s1[i] == '\0') || (s2[i] == '\0') || (s1[i] != s2[i]))
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		++i;
+	}
+	return (0);
 }

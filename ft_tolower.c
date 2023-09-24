@@ -13,15 +13,9 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void ft_tolower(char *str)
+int	ft_tolower(int c)
 {
-    int i;
-
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] += 32;
-        i++;
-    }
+	if (c >= 'A' && c <= 'Z')
+		return (c + 'a' - 'A');
+	return (c);
 }

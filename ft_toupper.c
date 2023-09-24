@@ -6,22 +6,16 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 00:38:03 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/20 00:38:26 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/24 23:20:58 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
 
-void ft_toupper(char *str)
+int	ft_toupper(int c)
 {
-    int i;
-
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] -= 32;
-        i++;
-    }
+	if (c >= 'a' && c <= 'z')
+		return (c + 'A' - 'a');
+	return (c);
 }

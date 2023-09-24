@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int strlen(char *str)
+int	strlen(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
-};
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
