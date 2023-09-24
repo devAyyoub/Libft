@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aflorido <aflorido@student.42malaga.com>   +#+  +:+       +#+         #
+#    By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 14:26:05 by aflorido          #+#    #+#              #
-#    Updated: 2023/09/11 21:25:57 by aflorido         ###   ########.fr        #
+#    Updated: 2023/09/24 23:44:08 by Aamjahed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
