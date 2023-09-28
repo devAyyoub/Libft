@@ -6,23 +6,26 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 00:46:38 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/24 23:13:23 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/29 01:22:10 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include <stddef.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	const char	*last;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
-		if (s[i] == c)
-			return ((char *)s + i);
-	i--;
+	last = NULL;
+	while (*s != '\0')
+	{
+		if (*s == c)
+			last = s;
+		s++;
+	}
+	if (last != NULL)
+		return ((char *)last);
+	if (c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
-return (NULL);

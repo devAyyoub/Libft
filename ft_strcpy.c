@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 12:46:26 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/29 01:29:39 by Aamjahed         ###   ########.fr       */
+/*   Created: 2023/09/29 01:11:23 by Aamjahed          #+#    #+#             */
+/*   Updated: 2023/09/29 01:17:24 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stddef.h>
+#include <unistd.h>
+#include <stdio.h>
 
-
-size_t	ft_strlen(const char *s)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	size_t	len;
+	unsigned int	i;
 
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		++i;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
