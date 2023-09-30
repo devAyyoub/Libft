@@ -6,9 +6,11 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 14:33:02 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/22 18:46:49 by aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:51:35 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 #include <stdio.h>
 #include <ctype.h>

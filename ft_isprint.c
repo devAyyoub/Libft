@@ -6,9 +6,11 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:59:19 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/25 00:07:09 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:51:08 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

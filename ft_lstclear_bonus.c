@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 00:13:14 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/10/01 01:53:06 by Aamjahed         ###   ########.fr       */
+/*   Created: 2023/10/01 01:24:22 by Aamjahed          #+#    #+#             */
+/*   Updated: 2023/10/01 01:24:35 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	i;
+	t_list	*tmp;
 
-	if (n == 0)
-		return (dest);
-	if (dest < src)
+	if (lst == NULL || del == NULL)
+		return ;
+	while (*lst)
 	{
-		i = 0;
-		while (i < n)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			++i;
-		}
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-	else if (dest > src)
-	{
-		i = n - 1;
-		while (i > 0)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			--i;
-		}
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-	}
-	return (dest);
 }

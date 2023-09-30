@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/11 14:26:05 by Aamjahed          #+#    #+#              #
-#    Updated: 2023/09/25 08:40:15 by Aamjahed         ###   ########.fr        #
+#    Created: 2023/10/01 01:35:42 by Aamjahed          #+#    #+#              #
+#    Updated: 2023/10/01 01:35:46 by Aamjahed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,3 +54,4 @@ fclean: clean
 re: fclean $(NAME)
 
 .PHONY: all clean fclean re bonus
+

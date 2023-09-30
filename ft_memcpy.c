@@ -6,12 +6,11 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 00:49:31 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/22 18:57:38 by aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:50:21 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

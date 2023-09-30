@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 00:13:14 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/10/01 01:53:06 by Aamjahed         ###   ########.fr       */
+/*   Created: 2023/10/01 01:38:04 by Aamjahed          #+#    #+#             */
+/*   Updated: 2023/10/01 01:45:06 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
+	t_list	*new_list;
+	t_list	*new_node;
 
-	if (n == 0)
-		return (dest);
-	if (dest < src)
+	if (!f || !del)
+		return (NULL);
+	new_list = NULL;
+	while (lst)
 	{
-		i = 0;
-		while (i < n)
+		new_node = ft_lstnew((*f)(lst->content));
+		if (new_node == NULL)
 		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			++i;
+			ft_lstclear(&new_list, del);
+			return (NULL);
 		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
-	else if (dest > src)
-	{
-		i = n - 1;
-		while (i > 0)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			--i;
-		}
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-	}
-	return (dest);
+	return (new_list);
 }

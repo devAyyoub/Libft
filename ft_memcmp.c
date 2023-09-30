@@ -6,12 +6,11 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 00:13:06 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/22 18:55:30 by aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:50:37 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

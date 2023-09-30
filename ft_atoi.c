@@ -6,14 +6,12 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 00:17:19 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/23 15:06:46 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:52:12 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-//Lo que hace atoi es convertir un string a un int/
 int	ft_atoi(const char *str)
 {
 	int	i;

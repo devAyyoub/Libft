@@ -6,23 +6,13 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 00:39:26 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/24 15:41:31 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:07:19 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return (&str[i]);
-		i++;
-	}
-	return (NULL);
+	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }

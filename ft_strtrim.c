@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 00:13:14 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/10/01 01:53:06 by Aamjahed         ###   ########.fr       */
+/*   Created: 2023/09/30 16:35:50 by Aamjahed          #+#    #+#             */
+/*   Updated: 2023/09/30 16:47:32 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
+	size_t	j;
+	char	*str;
 
-	if (n == 0)
-		return (dest);
-	if (dest < src)
+	str = 0;
+	if (s1 != 0 && set != 0)
 	{
 		i = 0;
-		while (i < n)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			++i;
-		}
+		j = ft_strlen(s1);
+		while (s1[i] && ft_strchr(set, s1[i]))
+			i++;
+		while (s1[j - 1] && ft_strchr(set, s1[j - 1]) && j > i)
+			j--;
+		str = (char *)malloc(sizeof(char) * (j - i + 1));
+		if (str)
+			ft_strlcpy(str, &s1[i], j - i + 1);
 	}
-	else if (dest > src)
-	{
-		i = n - 1;
-		while (i > 0)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			--i;
-		}
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-	}
-	return (dest);
+	return (str);
 }

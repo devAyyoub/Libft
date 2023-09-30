@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 00:13:14 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/10/01 01:53:06 by Aamjahed         ###   ########.fr       */
+/*   Created: 2023/10/01 01:20:12 by Aamjahed          #+#    #+#             */
+/*   Updated: 2023/10/01 01:20:23 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	long	ln;
 
-	if (n == 0)
-		return (dest);
-	if (dest < src)
+	ln = n;
+	if (ln == 0)
 	{
-		i = 0;
-		while (i < n)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			++i;
-		}
+		write(fd, "0", 1);
+		return ;
 	}
-	else if (dest > src)
+	if (ln < 0)
 	{
-		i = n - 1;
-		while (i > 0)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			--i;
-		}
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		write(fd, "-", 1);
+		ln = -ln;
 	}
-	return (dest);
+	if (ln > 9)
+		ft_putnbr_fd((int)(ln / 10), fd);
+	ft_putchar_fd(ln % 10 + '0', fd);
 }

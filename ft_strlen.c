@@ -6,12 +6,11 @@
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 12:46:26 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/29 01:29:39 by Aamjahed         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:48:59 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

@@ -5,27 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 00:46:38 by Aamjahed          #+#    #+#             */
-/*   Updated: 2023/09/29 01:22:10 by Aamjahed         ###   ########.fr       */
+/*   Created: 2023/09/30 17:06:30 by Aamjahed          #+#    #+#             */
+/*   Updated: 2023/10/01 01:51:27 by Aamjahed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last;
+	char			*p;
+	unsigned int	i;
 
-	last = NULL;
-	while (*s != '\0')
+	p = NULL;
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (*s == c)
-			last = s;
-		s++;
+		if (s[i] == (char)c)
+			p = (char *)s + i;
+		++i;
 	}
-	if (last != NULL)
-		return ((char *)last);
-	if (c == '\0')
-		return ((char *)s);
-	return (NULL);
+	if ((char)c == 0)
+		p = (char *)s + i;
+	return (p);
 }
