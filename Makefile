@@ -6,7 +6,7 @@
 #    By: Aamjahed <aamjahed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 01:35:42 by Aamjahed          #+#    #+#              #
-#    Updated: 2023/10/01 01:35:46 by Aamjahed         ###   ########.fr        #
+#    Updated: 2023/10/04 09:26:40 by Aamjahed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,9 @@ SRC			= ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 	ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-BONUS_SRC	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-	ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 EXTEN_SRC	= ft_isspace.c ft_isxdigit.c ft_abs.c ft_putchar.c ft_putstr.c \
 	ft_strcpy.c
 SRC_OBJ		= $(SRC:.c=.o)
-BONUS_OBJ	= $(BONUS_SRC:.c=.o)
 EXTEN_OBJ	= $(EXTEN_SRC:.c=.o)
 
 # --- Targets ---
@@ -42,8 +38,6 @@ all: $(NAME)
 $(NAME): $(EXTEN_OBJ) $(SRC_OBJ)
 	$(LIBC) $(NAME) $(EXTEN_OBJ) $(SRC_OBJ)
 
-bonus: $(EXTEN_OBJ) $(BONUS_OBJ) $(SRC_OBJ)
-	$(LIBC) $(NAME) $(EXTEN_OBJ) $(BONUS_OBJ) $(SRC_OBJ)
 
 clean:
 	$(RM) *.o
